@@ -9,5 +9,5 @@ RUN apk update && \
     perl && \
   rm -rf /var/cache/apk/*
 
-ADD drone-git /bin/
+ADD dist/alpine-linux/amd64/drone-git /bin/
 ENTRYPOINT ["/bin/drone-git"]
