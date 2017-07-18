@@ -39,7 +39,7 @@ func (p Plugin) Exec() error {
 	}
 
 	switch {
-	case isPullRequest(p.Build.Event) || isTag(p.Build.Event, p.Build.Ref):
+	case isManual(p.Build.Event) || isPullRequest(p.Build.Event) || isTag(p.Build.Event, p.Build.Ref):
 		cmds = append(cmds, fetch(p.Build.Ref, p.Config.Tags, p.Config.Depth))
 		cmds = append(cmds, checkoutHead())
 	default:

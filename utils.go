@@ -29,6 +29,11 @@ func isDirEmpty(dir string) bool {
 	return err == io.EOF
 }
 
+// helper function returns true if the commit is a tag.
+func isManual(event string) bool {
+	return event == "manual"
+}
+
 // helper function returns true if the commit is a pull_request.
 func isPullRequest(event string) bool {
 	return event == "pull_request"
