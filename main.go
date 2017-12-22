@@ -21,7 +21,7 @@ func main() {
 		cli.StringFlag{
 			Name:   "remote",
 			Usage:  "git remote url",
-			EnvVar: "CI_REMOTE_URL,CI_REMOTE_URL",
+			EnvVar: "CI_REMOTE_URL,CI_REPO_REMOTE",
 		},
 		cli.StringFlag{
 			Name:   "path",
